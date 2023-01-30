@@ -11,6 +11,7 @@ int main()
 {
     std::string tempvalue;
 
+    //Ask for the excess pore size and make sure the value is valid.
     std::cout << "Excess pore size width (0-0.866] : ";
     std::getline(std::cin, tempvalue);
     double eps = std::stod(tempvalue);
@@ -19,6 +20,7 @@ int main()
         return 1;
     }
 
+    //Ask for the minimum pressure value to plot and make sure it is valid.
     std::cout << "Minimum pressure (reduced units)) : ";
     std::getline(std::cin, tempvalue);
     double pmin = std::stod(tempvalue);
@@ -27,6 +29,7 @@ int main()
         return 1;
     }
 
+    //Ask for the maximum pressure value to plot and make sure it is valid.
     std::cout << "Maximum pressure (reduced units)) : ";
     std::getline(std::cin, tempvalue);
     double pmax = std::stod(tempvalue);
@@ -35,6 +38,7 @@ int main()
         return 1;
     }
 
+    //Amount the pressure values in between both pmin and pmax.
     std::cout << "Number of p values computed in between : ";
     std::getline(std::cin, tempvalue);
     int pnum = std::stoi(tempvalue);
@@ -43,6 +47,7 @@ int main()
         return 1;
     }
 
+    //Discretization parameter.The user must make sure it is large enough to produce a converged output.
     std::cout << "Discretization paremeter : ";
     std::getline(std::cin, tempvalue);
     int nsize = std::stoi(tempvalue);
@@ -65,16 +70,20 @@ int main()
 
     double density;
     Eigen::Matrix<double, Eigen::Dynamic, 1> eigvec;
-    //Divide pressure interval in equally spaced values
-    std::vector<double> pvalues (pnum, 0.0);
-    std::vector<double> dvalues (pnum, 0.0);
+
+    std::vector<double> pvalues (pnum, 0.0); //vector storing pressure values in the interval
+    std::vector<double> dvalues (pnum, 0.0); //vector storing density values for the corresponding pressures in pvalues
+
+    //Compute step size of the pressure interval
     double pstep = (pmax-pmin)/(pnum-1);
+
+    //Compute density for each of the pressure values in the interval
     for(int pidx=0;pidx<pnum;pidx++){
         pvalues[pidx] = pmin + pstep * (double)pidx;
         computeDensity(eps, pvalues[pidx], nsize, &dvalues[pidx], &eigvec);
     }
 
-   
+    //Write results
     std::cout << "\n************************" << std::endl;
     std::cout << "Epsilon =   " << eps << std::endl;
     std::cout << "Pressure =  [" << pmin << ", " << pmax << "]" << std::endl;

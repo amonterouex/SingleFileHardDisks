@@ -11,6 +11,7 @@ int main()
 {
     std::string tempvalue;
 
+    //Ask for the excess pore size and make sure the value is valid.
     std::cout << "Excess pore size width [0-0.866] : ";
     std::getline(std::cin, tempvalue);
     double eps = std::stod(tempvalue);
@@ -19,6 +20,7 @@ int main()
         return 1;
     }
 
+    //Ask for the pressure value and make sure it is valid.
     std::cout << "Pressure (reduced units) : ";
     std::getline(std::cin, tempvalue);
     double p = std::stod(tempvalue);
@@ -27,6 +29,7 @@ int main()
         return 1;
     }
 
+    //Discretization parameter.The user must make sure it is large enough to produce a converged output.
     std::cout << "Discretization paremeter : ";
     std::getline(std::cin, tempvalue);
     int nsize = std::stoi(tempvalue);
@@ -35,6 +38,7 @@ int main()
         return 1;
     }
 
+    //Ask whether the user whishes to export the density profile information
     std::cout << "Do you wish to export density profile information? (y/n) : ";
     std::getline(std::cin, tempvalue);
     std::string outfiles = tempvalue;
@@ -45,6 +49,7 @@ int main()
 
     double density;
     Eigen::Matrix<double, Eigen::Dynamic, 1> eigvec;
+    //Compute density
     computeDensity(eps, p, nsize, &density, &eigvec);
 
     std::cout << "\n************************" << std::endl;

@@ -2,13 +2,17 @@
 #include <Eigen/Dense>
 #include <Eigen/Eigenvalues>
 
+//Longitudinal separation at contact of two disks
 double a(double s){
     return sqrt(1.0-s*s);
 }
+
+// y(i) when discretizing the problem
 double y(int i,double eps,int nsize){
     return eps*((double)i/(nsize-1)-0.5);
 }
 
+//Given epsilon, p and nsize, it computes the linear density and the eigenvector (show squared value gives the density profile)
 int computeDensity(double eps, double p, int nsize, double *density,Eigen::Matrix<double, Eigen::Dynamic, 1> *eigvec){
     Eigen::Matrix<double, Eigen::Dynamic, Eigen::Dynamic> K;
     //Create matrix K
