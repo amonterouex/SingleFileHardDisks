@@ -1,0 +1,13 @@
+
+# Set linestyle 1 to red (#0060ad)
+set style line 1 \
+    linecolor rgb '#dd181f' \
+    linetype 1 linewidth 2 \
+    pointtype 7 pointsize 1.5
+
+set tics font "Helvetica,16"
+set xlabel "{/Symbol l}" font "Helvetica,16"
+set ylabel 'Z' font "Helvetica,16"
+plot  "equation_of_state.txt" with linespoints linestyle 1
+
+pause mouse close
