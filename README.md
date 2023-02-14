@@ -1,6 +1,6 @@
 # SingleFileHardDisks
 
-This is the source code accompanying [1] to solve the for the thermodynamic equilibrium properties (equation of state, transverse density profile) of the single-file hard disks fluid, as described in [1], using the transition matrix approach first proposed in [2].
+This is the source code accompanying [1] to solve for the thermodynamic equilibrium properties (equation of state, transverse density profile) of the single-file hard disks fluid, as described in [1], using the transition matrix approach first proposed in [2].
 
 ## :ferris_wheel: Dependencies
 
