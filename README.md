@@ -50,4 +50,4 @@ If you have trouble compiling or using this software, if you found a bug or if y
 ## :books: References
 [1] Ana M. Montero and A. Santos, Equation of State of Hard-Disk Fluids under Single-File Confinement, 	[arXiv:2212.08932](https://arxiv.org/abs/2212.08932)
 
-[2] D. A. Kofke and A. J. Post, Hard particles in narrow pores. Transfer-matrix solution and the periodic narrow box. J. Chem. Phys., **98**, 4853-486 (1993)
+[2] D. A. Kofke and A. J. Post, Hard particles in narrow pores. Transfer-matrix solution and the periodic narrow box. J. Chem. Phys., **98**, 4853-4861 (1993)
