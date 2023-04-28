@@ -48,6 +48,6 @@ To use them, first make sure you have gnuplot installed. Then, run ``gnuplot plo
 If you have trouble compiling or using this software, if you found a bug or if you have an important feature request, you may contact us at <anamontero@unex.es>
 
 ## :books: References
-[1] Ana M. Montero and A. Santos, Equation of State of Hard-Disk Fluids under Single-File Confinement, 	[arXiv:2212.08932](https://arxiv.org/abs/2212.08932)
+[1] Ana M. Montero and A. Santos, Equation of state of hard-disk fluids under single-file confinement, J. Chem. Phys. **158**, 154501 (2023)
 
 [2] D. A. Kofke and A. J. Post, Hard particles in narrow pores. Transfer-matrix solution and the periodic narrow box. J. Chem. Phys., **98**, 4853-4861 (1993)
